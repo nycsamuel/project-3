@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './Socket.css';
 
 export default class Socket extends Component {
+  constructor() {
+    super();
+    this.exportPlaylist = this.exportPlaylist.bind(this);
+  }
+
   componentWillMount() {
     this.socketFn();
   }
@@ -35,6 +40,20 @@ export default class Socket extends Component {
     });
   }
 
+  getUserPlaylist(id) {
+    // console.log('HITTTT', id);
+    return fetch();
+  }
+
+  exportPlaylist() {
+    // get user_id 
+    const user_id = 1; 
+    // call server and get the user's playlist
+    const pl = this.getUserPlaylist(user_id);
+    // send the json object to server through socket
+  }
+
+
   render() {
     return(
       <div>
@@ -43,6 +62,7 @@ export default class Socket extends Component {
           <input id="m" onChange={event => this.handleInputChange(event)}/>
           <button>Send</button>
         </form>
+        <button className="export" onClick={this.exportPlaylist}>Export</button>
       </div>
     )
   }

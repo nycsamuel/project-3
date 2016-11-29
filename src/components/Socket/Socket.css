@@ -46,3 +46,9 @@
 #messages li:nth-child(odd) {
   background: #eee;
 }
+
+.export {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
